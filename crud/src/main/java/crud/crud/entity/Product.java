@@ -21,7 +21,7 @@ public class Product {
     @Id
     @GeneratedValue
     private int id;
-    private String nome;
-    private int quantidade;
-    private double preco;
+    private String name;
+    private int quantity;
+    private double price;
 }
