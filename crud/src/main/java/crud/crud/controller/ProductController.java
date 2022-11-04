@@ -16,45 +16,43 @@ import crud.crud.service.ProductService;
 
 @RestController
 public class ProductController {
-    
+
     @Autowired
     private ProductService service;
 
     @PostMapping("/addProduct")
-    public Product addProduct(@RequestBody Product product){
+    public Product addProduct(@RequestBody Product product) {
         return service.saveProduct(product);
     }
 
     @PostMapping("/addProducts")
-    public List<Product> addProducts(@RequestBody List<Product> product){
+    public List<Product> addProducts(@RequestBody List<Product> product) {
         return service.saveProducts(product);
     }
 
     @GetMapping("/products")
-    public List<Product> findAllProducts(){
+    public List<Product> findAllProducts() {
         return service.getProducts();
     }
 
-    @GetMapping("/products/{id}")
-    public Product findProductById(@PathVariable int id){
+    @GetMapping("/productById/{id}")
+    public Product findProductById(@PathVariable int id) {
         return service.getProductById(id);
     }
 
-    @GetMapping("/products/{Name}")
-    public Product findProductByName(@PathVariable String Name){
+    @GetMapping("/product/{Name}")
+    public Product findProductByName(@PathVariable String Name) {
         return service.getProductByName(Name);
     }
 
     @PutMapping("/update")
-    public Product updateProduct(@RequestBody Product product){
+    public Product updateProduct(@RequestBody Product product) {
         return service.updateProduct(product);
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable int id){
+    public String deleteProduct(@PathVariable int id) {
         return service.deleteProduct(id);
     }
-
-
 
 }
